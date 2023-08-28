@@ -8,18 +8,24 @@
     <link rel="icon" href="./src/images/site-logo.png">
 </head>
 <body>
-<div class="site-wrapper">
+<div class="site-wrapper" id="homeAnchor">
     <header>
         <nav>
             <div class="logo-box">
-                <img src="./src/images/navbar-logo.svg" alt="logo">
+                <a href="#homeAnchor">
+                    <img src="./src/images/navbar-logo.svg" alt="logo">
+                </a>
             </div>
             <div class="nav-items">
-                <a href="">SERVICES</a>
-                <a href="">PORTFOLIO</a>
-                <a href="">ABOUT</a>
-                <a href="">TEAM</a>
-                <a href="">CONTACT</a>
+                <div class="hamburger-block">
+                    <h2>MENU</h2>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <a href="#servicesAnchor">SERVICES</a>
+                <a href="#portfolioAnchor">PORTFOLIO</a>
+                <a href="#aboutAnchor">ABOUT</a>
+                <a href="#teamAnchor">TEAM</a>
+                <a href="#contactAnchor">CONTACT</a>
             </div>
         </nav>
     </header>
@@ -29,10 +35,12 @@
                 <p>Welcome To Our Studio!</p>
                 <h2>IT'S NICE TO MEET YOU
                 </h2>
+                <a href="#servicesAnchor">
                 <button class="btn yellow-btn yellow-btn-hover" type="button">TELL ME MORE</button>
+                </a>
             </div>
         </div>
-        <div class="services-wrapper">
+        <div class="services-wrapper" id="servicesAnchor">
             <div class="services-title">
                 <h2>SERVICES</h2>
                 <p>Lorem ipsum dolor sit amet consectetur.
@@ -65,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio-container">
+        <div class="portfolio-container" id="portfolioAnchor">
             <div class="portfolio-title">
                 <h2>PORTFOLIO</h2>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -128,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div class="about-container">
+        <div class="about-container" id="aboutAnchor">
             <div class="about-container-title">
                 <h2>ABOUT</h2>
                 <p>Lorem ipsum dolor sit amet consectetur.
@@ -196,7 +204,7 @@
                 </div>
             </div>
         </div>
-        <div class="team-wrapper">
+        <div class="team-wrapper" id="teamAnchor">
             <div class="team-title">
                 <h2>OUR AMAZING TEAM
                 </h2>
@@ -277,33 +285,35 @@
             <img src="./src/images/facebook.svg" alt="facebook">
             <img src="./src/images/ibm.svg" alt="ibm">
         </div>
-        <div class="contact-form-wrapper">
-             <div class="contact-form-title">
-                 <h2>CONTACT US</h2>
-                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-             </div>
+        <div class="contact-form-wrapper" id="contactAnchor">
+            <div class="contact-form-title">
+                <h2>CONTACT US</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
             <div class="contact-form-row">
                 <form action="#" enctype="multipart/form-data" method="post">
                     <div class="form-container">
-                    <div class="user-info">
-                        <label for="uName">
-                            <input type="text" placeholder="Your Name*" required name="uName" id="uName">
-                        </label>
-                        <label for="uEmail">
-                            <input type="email" placeholder="Your Email*" required name="uEmail" id="uEmail">
-                        </label>
-                        <label for="uPhone">
-                            <input type="tel" placeholder="Your Phone*" required name="uPhone" id="uPhone">
-                        </label>
+                        <div class="user-info">
+                            <label for="uName">
+                                <input type="text" placeholder="Your Name*" required name="uName" id="uName">
+                            </label>
+                            <label for="uEmail">
+                                <input type="email" placeholder="Your Email*" required name="uEmail" id="uEmail">
+                            </label>
+                            <label for="uPhone">
+                                <input type="tel" placeholder="Your Phone*" required name="uPhone" id="uPhone">
+                            </label>
+                        </div>
+                        <div class="user-info">
+                            <label for="uText">
+                                <textarea name="uText" id="uText" required placeholder="Message*"></textarea>
+                            </label>
+                        </div>
                     </div>
-                    <div class="user-info">
-                        <label for="uText">
-                        <textarea name="uText" id="uText" required placeholder="Message*"></textarea>
-                        </label>
-                    </div>
-                </div>
                     <label for="sendButton" class="form-send-label">
-                        <button type="submit" class="btn form-send-btn" name="sendButton" id="sendButton" disabled>SEND MESSAGE</button>
+                        <button type="submit" class="btn form-send-btn" name="sendButton" id="sendButton" disabled>SEND
+                            MESSAGE
+                        </button>
                     </label>
                 </form>
             </div>
@@ -332,4 +342,17 @@
 </div>
 </body>
 <script src="https://kit.fontawesome.com/c548267e94.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.querySelector("nav");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 0) {
+                nav.style.backgroundColor = "#212529";
+            } else {
+                nav.style.backgroundColor = "transparent";
+            }
+        });
+    });
+</script>
 </html>
