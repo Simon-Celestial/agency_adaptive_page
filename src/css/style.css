@@ -1181,6 +1181,7 @@ footer {
         text-align: center;
         margin-bottom: 0;
     }
+
     nav {
         padding: 0 30px;
     }
@@ -1205,6 +1206,5 @@ footer {
     .history-wrapper:after {
         left: 42px;
     }
-
 }
 
